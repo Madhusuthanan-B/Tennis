@@ -16,35 +16,51 @@ $base-court-height: $back-court-height / 2 - $inner-court-padding;
 $forward-court-height: $back-court-height /2+$inner-court-padding;
 
 
-.wrapper {
-  height: 100vh;
-  width: 100%;
+$line-color: #fff;
+$line-thickness: 5px;
+
+@mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin tennis-net($pillar-color, $top-cloth-color) {
+  height: $net-height;
+  width: $court-width;
+  border-left: $line-thickness solid $pillar-color;
+  border-right: $line-thickness solid $pillar-color;
+  border-top: $line-thickness solid $top-cloth-color;
+  background-color: #ffff;
+  opacity: 0.9;
+  background-size: 7rem 10rem;
+  background-image: url("../assets/tennis-net.jpg");
+  background-repeat: repeat;
+  transform: translate(-$court-to-singles-court-padding/2 - 0.32, 0);
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  @include flex-center();
 
   .ground {
     background-color: #6AAA32;
     height: $ground-height;
     width: $ground-width;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center();
 
     .court {
-      border: 5px solid #ffff;
+      border: $line-thickness solid $line-color;
       height: $court-height;
       width: $court-width;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center();
 
       .singles-court {
         height: 100%;
         width: $singles-court-width;
-        border-left: 5px solid #ffff;
-        border-right: 5px solid #ffff;
+        border-left: $line-thickness solid $line-color;
+        border-right: $line-thickness solid $line-color;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -56,9 +72,7 @@ $forward-court-height: $back-court-height /2+$inner-court-padding;
 
           .base-court {
             height: $base-court-height;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-center();
           }
 
           .forward-court {
@@ -68,29 +82,17 @@ $forward-court-height: $back-court-height /2+$inner-court-padding;
 
             section {
               width: 50%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              @include flex-center();
             }
 
             .right {
-              border-left: 5px solid #ffff;
+              border-left: $line-thickness solid $line-color;
             }
           }
         }
 
         .net {
-          height: $net-height;
-          width: $court-width;
-          border-left: 5px solid green;
-          border-right: 5px solid green;
-          border-top: 5px solid #ffff;
-          background-color: #ffff;
-          opacity: 0.8;
-          background-size: 7rem 10rem;
-          background-image: url("../assets/tennis-net.jpg");
-          background-repeat: repeat;
-          transform: translate(-$court-to-singles-court-padding/2 - 0.32, 0);
+          @include tennis-net(green, #ffff);
         }
       }
     }
@@ -102,9 +104,9 @@ $forward-court-height: $back-court-height /2+$inner-court-padding;
 }
 
 .bottom-line {
-  border-bottom: 5px solid #ffff;
+  border-bottom: $line-thickness solid $line-color;
 }
 
 .top-line {
-  border-top: 5px solid #ffff;
+  border-top: $line-thickness solid $line-color;
 }
