@@ -1,0 +1,97 @@
+$ground-height: 50rem;
+$ground-width: 40rem;
+
+$court-height: $ground-height - 5rem;
+$court-width: $ground-width - 5rem;
+
+$court-to-singles-court-padding: 5rem;
+
+$singles-court-width: $court-width - $court-to-singles-court-padding;
+
+$net-height: 1rem;
+$back-court-height: $court-height/2 - $net-height / 2;
+
+$inner-court-padding: 3rem;
+$base-court-height: $back-court-height / 2 - $inner-court-padding;
+$forward-court-height: $back-court-height /2+$inner-court-padding;
+
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .ground {
+    background-color: #6AAA32;
+    height: $ground-height;
+    width: $ground-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .court {
+      border: 5px solid #ffff;
+      height: $court-height;
+      width: $court-width;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .singles-court {
+        height: 100%;
+        width: $singles-court-width;
+        border-left: 5px solid #ffff;
+        border-right: 5px solid #ffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .back-court {
+          height: $back-court-height;
+          display: flex;
+          flex-direction: column;
+
+          .base-court {
+            height: $base-court-height;
+          }
+
+          .forward-court {
+            height: $forward-court-height;
+            display: flex;
+            justify-content: space-evenly;
+
+            section {
+              width: 50%;
+            }
+
+            .right {
+              border-left: 5px solid #ffff;
+            }
+          }
+        }
+
+        .net {
+          height: $net-height;
+          width: $court-width;
+          background-color: #ffff;
+          transform: translate(-$court-to-singles-court-padding/2, 0);
+        }
+      }
+    }
+  }
+}
+
+.col-reverse {
+  flex-direction: column-reverse !important;
+}
+
+.bottom-line {
+  border-bottom: 5px solid #ffff;
+}
+
+.top-line {
+  border-top: 5px solid #ffff;
+}
