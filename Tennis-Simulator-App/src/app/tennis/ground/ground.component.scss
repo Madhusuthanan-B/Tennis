@@ -6,9 +6,9 @@
 }
 
 .clay {
-    @include ground(#E96837);
+    @include ground($color-clay);
 }
 
 .synthetic {
-    @include ground(#104EAD);
+    @include ground($color-synthetic);
 }

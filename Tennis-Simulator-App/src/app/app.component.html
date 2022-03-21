@@ -1,5 +1,11 @@
+<section class="game-controls">
+  <button class="grass-btn" (click)="courtChange('grass')">Grass Court</button>
+  <button class="clay-btn" (click)="courtChange('clay')">Clay Court</button>
+  <button class="synthetic-btn" (click)="courtChange('synthetic')">Synthentic Court</button>
+</section>
+
 <section class="wrapper">
-  <app-ground [courtType]="'grass'">
+  <app-ground [courtType]="selectedCourtType">
     <section class="court">
       <section class="singles-court">
         <section class="ball"></section>

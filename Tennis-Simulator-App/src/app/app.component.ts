@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CourtType } from './tennis/models/court-type';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tennis-Simulator-App';
+  selectedCourtType: CourtType  = 'grass';
+
+  courtChange(newCourtType: CourtType) {
+    this.selectedCourtType = newCourtType;
+  }
 }

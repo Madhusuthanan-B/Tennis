@@ -1,6 +1,27 @@
 @import 'mixins';
 @import 'variables';
 
+.game-controls {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  
+  button {
+   @include btn-generator();
+  }
+
+  .grass-btn {
+    background-color: $color-grass;
+  }
+  .clay-btn {
+    background-color: $color-clay;
+  }
+  .synthetic-btn {
+    background-color: $color-synthetic;
+  }
+}
+
 .wrapper {
   height: 100vh;
   width: 100%;

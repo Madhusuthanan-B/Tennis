@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-@mixin ground($ground-color: #6AAA32) {
+@mixin ground($ground-color: $color-grass) {
   background-color: $ground-color;
   height: $ground-height;
   width: $ground-width;
@@ -25,4 +25,15 @@
   background-image: url("../assets/tennis-net.jpg");
   background-repeat: repeat;
   transform: translate(-$court-to-singles-court-padding / 2 - 0.32, 0);
+}
+
+@mixin btn-generator() {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.2rem;
+  color: #ffff;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
