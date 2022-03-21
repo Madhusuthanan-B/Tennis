@@ -1,0 +1,14 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.grass-court {
+    @include ground();
+}
+
+.clay-court {
+    @include ground(#E96837);
+}
+
+.synthetic-court {
+    @include ground(#104EAD);
+}

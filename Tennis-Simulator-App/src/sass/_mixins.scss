@@ -1,0 +1,26 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin ground($ground-color: #6AAA32) {
+    background-color: $ground-color;
+    height: $ground-height;
+    width: $ground-width;
+    @include flex-center();
+}
+
+@mixin tennis-net($pillar-color, $top-cloth-color) {
+  height: $net-height;
+  width: $court-width;
+  border-left: $line-thickness solid $pillar-color;
+  border-right: $line-thickness solid $pillar-color;
+  border-top: $line-thickness solid $top-cloth-color;
+  background-color: #ffff;
+  opacity: 0.9;
+  background-size: 7rem 10rem;
+  background-image: url("../assets/tennis-net.jpg");
+  background-repeat: repeat;
+  transform: translate(-$court-to-singles-court-padding/2 - 0.32, 0);
+}

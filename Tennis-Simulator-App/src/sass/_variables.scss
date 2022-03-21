@@ -1,0 +1,22 @@
+$ground-height: 50rem;
+$ground-width: 40rem;
+
+$court-height: $ground-height - 5rem;
+$court-width: $ground-width - 5rem;
+
+$court-to-singles-court-padding: 5rem;
+
+$singles-court-width: $court-width - $court-to-singles-court-padding;
+
+$net-height: 3rem;
+$back-court-height: $court-height/2 - $net-height / 2;
+
+$inner-court-padding: 3rem;
+$base-court-height: $back-court-height / 2 - $inner-court-padding;
+$forward-court-height: $back-court-height /2+$inner-court-padding;
+
+
+$line-color: #fff;
+$line-thickness: 5px;
+
+$ball-size: 30px;

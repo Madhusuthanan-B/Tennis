@@ -1,56 +1,10 @@
-$ground-height: 50rem;
-$ground-width: 40rem;
-
-$court-height: $ground-height - 5rem;
-$court-width: $ground-width - 5rem;
-
-$court-to-singles-court-padding: 5rem;
-
-$singles-court-width: $court-width - $court-to-singles-court-padding;
-
-$net-height: 3rem;
-$back-court-height: $court-height/2 - $net-height / 2;
-
-$inner-court-padding: 3rem;
-$base-court-height: $back-court-height / 2 - $inner-court-padding;
-$forward-court-height: $back-court-height /2+$inner-court-padding;
-
-
-$line-color: #fff;
-$line-thickness: 5px;
-
-$ball-size: 30px;
-
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin tennis-net($pillar-color, $top-cloth-color) {
-  height: $net-height;
-  width: $court-width;
-  border-left: $line-thickness solid $pillar-color;
-  border-right: $line-thickness solid $pillar-color;
-  border-top: $line-thickness solid $top-cloth-color;
-  background-color: #ffff;
-  opacity: 0.9;
-  background-size: 7rem 10rem;
-  background-image: url("../assets/tennis-net.jpg");
-  background-repeat: repeat;
-  transform: translate(-$court-to-singles-court-padding/2 - 0.32, 0);
-}
+@import '../sass/mixins';
+@import '../sass/variables';
 
 .wrapper {
   height: 100vh;
   width: 100%;
   @include flex-center();
-
-  .ground {
-    background-color: #6AAA32;
-    height: $ground-height;
-    width: $ground-width;
-    @include flex-center();
 
     .court {
       border: $line-thickness solid $line-color;
@@ -100,7 +54,6 @@ $ball-size: 30px;
         }
       }
     }
-  }
 }
 
 .col-reverse {
