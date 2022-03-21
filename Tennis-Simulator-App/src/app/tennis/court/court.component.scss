@@ -1,0 +1,82 @@
+@import 'mixins';
+@import 'variables';
+
+.court {
+  border: $line-thickness solid $line-color;
+  height: $court-height;
+  width: $court-width;
+  @include flex-center();
+
+  .singles-court {
+    height: 100%;
+    width: $singles-court-width;
+    border-left: $line-thickness solid $line-color;
+    border-right: $line-thickness solid $line-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+
+    .back-court {
+      height: $back-court-height;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      .base-court {
+        height: $base-court-height;
+        @include flex-center();
+      }
+
+      .forward-court {
+        height: $forward-court-height;
+        display: flex;
+        justify-content: space-evenly;
+
+        section {
+          width: 50%;
+          @include flex-center();
+        }
+
+        .right {
+          border-left: $line-thickness solid $line-color;
+        }
+      }
+    }
+
+    .net {
+      @include tennis-net(green, #ffff);
+    }
+  }
+}
+
+.col-reverse {
+  flex-direction: column-reverse !important;
+}
+
+.bottom-line {
+  border-bottom: $line-thickness solid $line-color;
+}
+
+.top-line {
+  border-top: $line-thickness solid $line-color;
+}
+
+.racket {
+  width: 4rem;
+  height: 5rem;
+  position: absolute;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ball {
+  width: $ball-size;
+  height: $ball-size;
+  background: radial-gradient(circle at 65% 15%, white 1px, #aaca18 0%, #dfff4f 60%, #aaca18 100%);
+  position: absolute;
+  top: 0;
+  border-radius: $ball-size;
+}
