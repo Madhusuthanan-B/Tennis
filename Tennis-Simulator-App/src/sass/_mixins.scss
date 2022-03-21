@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -5,10 +7,10 @@
 }
 
 @mixin ground($ground-color: #6AAA32) {
-    background-color: $ground-color;
-    height: $ground-height;
-    width: $ground-width;
-    @include flex-center();
+  background-color: $ground-color;
+  height: $ground-height;
+  width: $ground-width;
+  @include flex-center();
 }
 
 @mixin tennis-net($pillar-color, $top-cloth-color) {
@@ -22,5 +24,5 @@
   background-size: 7rem 10rem;
   background-image: url("../assets/tennis-net.jpg");
   background-repeat: repeat;
-  transform: translate(-$court-to-singles-court-padding/2 - 0.32, 0);
+  transform: translate(-$court-to-singles-court-padding / 2 - 0.32, 0);
 }
