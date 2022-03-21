@@ -1,14 +1,14 @@
 @import 'mixins';
 @import 'variables';
 
-.grass-court {
+.grass {
     @include ground();
 }
 
-.clay-court {
+.clay {
     @include ground(#E96837);
 }
 
-.synthetic-court {
+.synthetic {
     @include ground(#104EAD);
 }

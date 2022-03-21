@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { CourtType } from '../models/court-type';
 
 @Component({
   selector: 'app-ground',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class GroundComponent implements OnInit {
 
-  @Input() courtType: 'grass-court' | 'clay-court' | 'synthetic-court' = 'grass-court';
+  @Input() courtType: CourtType = 'grass';
 
   constructor() { }
 
