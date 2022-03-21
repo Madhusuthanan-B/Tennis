@@ -19,6 +19,8 @@ $forward-court-height: $back-court-height /2+$inner-court-padding;
 $line-color: #fff;
 $line-thickness: 5px;
 
+$ball-size: 30px;
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -64,6 +66,7 @@ $line-thickness: 5px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        position: relative;
 
         .back-court {
           height: $back-court-height;
@@ -113,10 +116,20 @@ $line-thickness: 5px;
 }
 
 .racket {
-    width: 4rem;
-    height: 5rem;
-    position: absolute;
-    &:hover {
-        cursor: pointer;
-    }
+  width: 4rem;
+  height: 5rem;
+  position: absolute;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ball {
+  width: $ball-size;
+  height: $ball-size;
+  background: radial-gradient(circle at 65% 15%, white 1px, #aaca18 0%, #dfff4f 60%, #aaca18 100%);
+  position: absolute;
+  top: 0;
+  border-radius: $ball-size;
 }
