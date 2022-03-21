@@ -69,6 +69,7 @@ $line-thickness: 5px;
           height: $back-court-height;
           display: flex;
           flex-direction: column;
+          position: relative;
 
           .base-court {
             height: $base-court-height;
@@ -109,4 +110,13 @@ $line-thickness: 5px;
 
 .top-line {
   border-top: $line-thickness solid $line-color;
+}
+
+.racket {
+    width: 4rem;
+    height: 5rem;
+    position: absolute;
+    &:hover {
+        cursor: pointer;
+    }
 }
