@@ -49,34 +49,3 @@
     }
   }
 }
-
-.col-reverse {
-  flex-direction: column-reverse !important;
-}
-
-.bottom-line {
-  border-bottom: $line-thickness solid $line-color;
-}
-
-.top-line {
-  border-top: $line-thickness solid $line-color;
-}
-
-.racket {
-  width: 4rem;
-  height: 5rem;
-  position: absolute;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.ball {
-  width: $ball-size;
-  height: $ball-size;
-  background: radial-gradient(circle at 65% 15%, white 1px, #aaca18 0%, #dfff4f 60%, #aaca18 100%);
-  position: absolute;
-  top: 0;
-  border-radius: $ball-size;
-}

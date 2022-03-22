@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GroundComponent } from './ground/ground.component';
-import { CourtComponent } from './court/court.component';
+import { CourtModule } from './court/court.module';
 
 @NgModule({
   declarations: [
-    GroundComponent,
-    CourtComponent
+    GroundComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CourtModule
   ],
-  exports: [GroundComponent, CourtComponent]
+  exports: [GroundComponent, CourtModule]
 })
 export class TennisModule { }

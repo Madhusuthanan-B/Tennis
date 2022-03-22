@@ -1,0 +1,64 @@
+@import 'mixins';
+@import 'variables';
+
+.top {
+    flex-direction: column imp !important;
+}
+
+.bottom {
+    flex-direction: column-reverse !important;
+}
+
+.back-court {
+  height: $back-court-height;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .base-court {
+    height: $base-court-height;
+    @include flex-center();
+  }
+
+  .forward-court {
+    height: $forward-court-height;
+    display: flex;
+    justify-content: space-evenly;
+
+    section {
+      width: 50%;
+      @include flex-center();
+    }
+
+    .right {
+      border-left: $line-thickness solid $line-color;
+    }
+  }
+}
+
+.bottom-line {
+    border-bottom: $line-thickness solid $line-color;
+  }
+  
+  .top-line {
+    border-top: $line-thickness solid $line-color;
+  }
+  
+  .racket {
+    width: 4rem;
+    height: 5rem;
+    position: absolute;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .ball {
+    width: $ball-size;
+    height: $ball-size;
+    background: radial-gradient(circle at 65% 15%, white 1px, #aaca18 0%, #dfff4f 60%, #aaca18 100%);
+    position: absolute;
+    top: 0;
+    border-radius: $ball-size;
+  }
